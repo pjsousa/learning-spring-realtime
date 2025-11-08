@@ -17,7 +17,20 @@ Let’s dive in.
 
 We continue working inside the same Spring Boot project we created in Articles 1 and 2. Ensure you still have the WebSocket starter dependency and the `WebSocketConfig` class registering `/ws` as the STOMP endpoint, `/topic` as the broker prefix, and `/app` as the application prefix.
 
-If you cloned the repository from earlier in the series, consider creating a new Git branch (e.g., `feature/chat-room`) so you can track the instructions cleanly. Run `./mvnw spring-boot:run` once to make sure everything compiles.
+If you cloned the repository from earlier in the series, consider creating a new Git branch (e.g., `feature/chat-room`) so you can track the instructions cleanly. 
+
+### Dependencies
+
+One small change you'll need to do in the `pom.xml` file is to add `spring-boot-starter-validation` to the dependencies. This will come in handy during this article when we touch a bit on server-side input validation.
+
+``` xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+```
+
+Run `./mvnw spring-boot:run` once to make sure everything compiles.
 
 ## Modeling Chat Messages
 
