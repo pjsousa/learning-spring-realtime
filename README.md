@@ -1,13 +1,32 @@
-# Article Ideas
+# STOMP Blog Series - Article Planning
 
-On our first brainstorm we have drafted a 10-article blog series plan focusing on implementing STOMP over WebSocket using Spring Boot and minimalist HTML/JavaScript clients. This series progresses logically from basic setup to complex, scalable applications, covering all your specified requirements.
+This repository contains the planning and implementation for a comprehensive blog series on implementing STOMP toy projects with Spring Boot and plain HTML.
 
+## Series Overview
 
-Each article will be a 1500-2000 word article.
-All necessary code snipets and setup instructures will be given within the articles.
-The topics will build one on top of the other, but we will try to make the articles as stand alone as possible.
-Each article will guide the reader through the spring boot and websockets topics at hand through snipets to code-along and instructurion on how to setup the service
-At the end, we'll also need to provide the code for a test client or clients so that the reader can open the browser right away at the end and try out the service they just implemented.
+**Target:** 10-11 article series (1500-2000 words each)  
+**Focus:** STOMP over WebSocket using Spring Boot and minimalist HTML/JavaScript clients  
+**Approach:** Articles build logically but remain as standalone as possible
+
+## Requirements
+
+- Each article: 1500-2000 words
+- All necessary code snippets and setup instructions included
+- Topics build on each other but remain standalone
+- Step-by-step guidance through Spring Boot and WebSocket topics
+- Complete test client(s) provided for immediate browser testing
+
+## Comprehensive Plan
+
+See **[10-article-series-plan.md](./10-article-series-plan.md)** for the complete detailed plan including:
+- Full article outlines
+- Learning goals for each article
+- Key concepts covered
+- Deliverables and test clients
+- Technical standards
+- Series progression logic
+
+## Quick Reference: Article List
 
 
 
@@ -52,6 +71,19 @@ Overview: Scaling high-frequency applications requires detailed tuning of the Sp
 # Article 10: Enterprise Scaling: Connecting to an External Message Broker
 Title: Scaling to Millions: Implementing the STOMP Broker Relay for Enterprise Applications
 Overview: This advanced article addresses the requirement of scaling to millions of connections and supporting clustering across multiple application instances. We acknowledge that the simple in-memory broker is inadequate for high load and introduce the STOMP broker relay (e.g., connecting to RabbitMQ or ActiveMQ). We switch the configuration from enableSimpleBroker to enableStompBrokerRelay. This setup allows the Spring application instances to relay messages via TCP to a dedicated, robust external broker, enabling true horizontal scaling and ensuring messages broadcast by one application instance reach clients connected to any other instance in the cluster. We also touch upon handling system and client authentication when connecting to the external broker.
+
+# Article 11: Deciphering STOMP Messaging Vectors
+Title: Deciphering STOMP Messaging: The Vectors of Real-Time Partitioning (Topic, Queue, User, Subscription, Connection, Session)
+Overview: This article explains the layered mechanisms Spring and the STOMP protocol use to structure real-time communication. Unlike raw WebSockets, which are merely byte streams, STOMP introduces semantics necessary for building complex, scalable messaging architectures. We analyze the six critical partitioning and routing vectors (Topic, Queue, User, Subscription, Connection, and Session) that allow messages to be directed precisely where they need to go, enabling both broadcast and targeted private messaging patterns. This layer of abstraction frees developers from dealing with low-level connection management and raw message handling.
+
+**Key Vectors:**
+1. **Destination (Topic/Queue)**: Highest level of partitioning - defines who should potentially receive messages
+2. **Subscription**: Specific request by client to listen to a destination with unique subscription IDs
+3. **User**: Authenticated Principal associated with the session for user-specific routing
+4. **Session**: Application-level context (WebSocketSession) maintained by Spring
+5. **Connection**: Physical TCP/WebSocket connection over which STOMP frames flow
+
+See the [detailed plan](./10-article-series-plan.md) for complete Article 11 outline and structure.
 
 
 
