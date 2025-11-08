@@ -213,7 +213,7 @@ package com.example.stompchat.chat;
 
 import java.util.List;
 
-import org.springframework.messaging.handler.annotation.SubscribeMapping;
+import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
