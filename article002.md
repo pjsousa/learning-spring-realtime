@@ -1,5 +1,9 @@
 # Going Live: Implementing Real-Time Server Updates using @SendTo and Scheduling
 
+> curated by @psousa - Nov 2025
+
+
+
 In the first article of this series we built the simplest possible STOMP pipeline: a user-initiated message flowed from a browser to a Spring Boot controller and back out to subscribed clients. Real-time applications, however, often need to originate data on the server side—think market tickers, IoT sensor feeds, or collaborative dashboards that constantly refresh themselves. In this second installment we will teach our toy application to generate data on its own schedule and broadcast those updates to every connected browser without requiring user interaction.
 
 We will walk through the following milestones:
