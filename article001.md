@@ -1,5 +1,7 @@
 # The STOMP Startup: Connecting Spring Boot and Plain HTML for Simple Real-Time Messaging
 
+> curated by @psousa - Nov 2025
+
 Real-time messaging is no longer a luxury feature reserved for massive social platforms. Even the most modest internal dashboards or toy projects can benefit from instantly pushing information between a server and a browser without forcing the user to refresh the page. In this opening article of our STOMP toy project series, we will set the foundation for everything that follows: creating a Spring Boot application that speaks STOMP over WebSocket, pairing it with a minimalist HTML client, and watching the two exchange messages in real time.
 
 We will keep this journey deliberately hands-on. You will create a brand-new project, add only the dependencies you truly need, wire up the required configuration classes, and build your first controller that can receive and broadcast messages. On the front end, you will write a simple HTML page with a sprinkling of vanilla JavaScript that opens a STOMP connection, sends data, and displays the server’s responses in the browser.
