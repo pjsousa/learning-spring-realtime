@@ -147,6 +147,8 @@ public class ChatController {
     public record TypedRequest(@NotBlank @Size(max = 40) String sender,
                                @NotBlank @Size(max = 500) String content) {}
 
+    public record TypingRequest(@NotBlank @Size(max = 40) String sender) {}
+
     public ChatController(ChatHistory history, SimpMessagingTemplate messagingTemplate) {
         this.history = history;
         this.messagingTemplate = messagingTemplate;
@@ -162,15 +164,14 @@ public class ChatController {
     }
 
     @MessageMapping("/typing")
-    public void handleTyping(@Payload @Valid TypedRequest request) {
+    public void handleTyping(@Payload @Valid TypingRequest request) {
         messagingTemplate.convertAndSend("/topic/chat.typing", request.sender());
     }
 
     private String sanitize(String content) {
         return content.replaceAll("\\s+", " ").trim();
     }
-}
-```
+}```
 
 Key points:
 
