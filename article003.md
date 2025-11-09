@@ -1,5 +1,9 @@
 # Mastering Two-Way Updates: The Classic STOMP Chat Room Case Study
 
+> ❌ tests not necessary in this article
+> ❌ UI shows "Online" pane always empty
+> ❌ The SubscribeMapping in ChatHistoryController to get historySnapshot does not work
+
 Two-way communication is where WebSocket and STOMP truly shine. In the previous articles we experimented with user-triggered requests and server-driven updates, but each interaction was still fundamentally one-directional. In this third installment we will build a multi-user chat room that demonstrates full bidirectional messaging: every browser sends messages through the Spring Boot application, which validates and broadcasts them to all subscribers in real time.
 
 Chat applications are fantastic teaching tools because they expose every aspect of the STOMP pipeline: connection lifecycle, message routing, error handling, DOM updates, and even basic persistence if you choose to store history. We will keep the implementation simple enough to understand at a glance while still covering best practices you can reuse in more serious projects.
